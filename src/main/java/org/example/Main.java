@@ -3,7 +3,6 @@ package org.example;
 public class Main {
 
     // @off
-
     static public native int add (int a, int b); /*
 		return a + b;
 	*/
