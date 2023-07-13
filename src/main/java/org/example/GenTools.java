@@ -144,7 +144,7 @@ public class GenTools {
                 builder.append("\r\n");
                 builder.append("include_directories(${PROJECT_SOURCE_DIR}/)");
                 builder.append("\r\n");
-                builder.append("add_library(1_demo SHARED org_example_Main.cpp)");
+                builder.append("add_library(1_demo SHARED ${cppfile})");
                 writer.write(builder.toString());
                 writer.flush();
                 System.out.println(builder.toString());
