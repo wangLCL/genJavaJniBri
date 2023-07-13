@@ -70,11 +70,11 @@ public class AntScriptGenerator {
 		}
 
 		// copy jni headers
-		copyJniHeaders(config.jniDir.path());
+		copyJniHeaders("src/main/resources/");
 
 		// copy memcpy_wrap.c, needed if your build platform uses the latest glibc, e.g. Ubuntu 12.10
 		if (config.jniDir.child("memcpy_wrap.c").exists() == false) {
-			new com.badlogic.gdx.jnigen.FileDescriptor("com/badlogic/gdx/jnigen/resources/scripts/memcpy_wrap.c", FileType.Classpath).copyTo(config.jniDir
+			new com.badlogic.gdx.jnigen.FileDescriptor("scripts/memcpy_wrap.c", FileType.Classpath).copyTo(config.jniDir
 				.child("memcpy_wrap.c"));
 		}
 
@@ -116,7 +116,7 @@ public class AntScriptGenerator {
 		}
 
 		// generate the master build script
-		String template = new com.badlogic.gdx.jnigen.FileDescriptor("com/badlogic/gdx/jnigen/resources/scripts/build.xml.template", FileType.Classpath)
+		String template = new com.badlogic.gdx.jnigen.FileDescriptor("scripts/build.xml.template", FileType.Classpath)
 			.readString();
 		StringBuilder clean = new StringBuilder();
 		StringBuilder compile = new StringBuilder();
@@ -148,7 +148,7 @@ public class AntScriptGenerator {
 	}
 
 	private void copyJniHeaders (String jniDir) {
-		final String pack = "com/badlogic/gdx/jnigen/resources/headers";
+		final String pack = "headers";
 		String files[] = {"classfile_constants.h", "jawt.h", "jdwpTransport.h", "jni.h", "linux/jawt_md.h", "linux/jni_md.h",
 			"mac/jni_md.h", "win32/jawt_md.h", "win32/jni_md.h"};
 
@@ -183,10 +183,10 @@ public class AntScriptGenerator {
 		// read template file from resources
 		String template = null;
 		if (target.os == TargetOs.IOS) {
-			template = new com.badlogic.gdx.jnigen.FileDescriptor("com/badlogic/gdx/jnigen/resources/scripts/build-ios.xml.template", FileType.Classpath)
+			template = new com.badlogic.gdx.jnigen.FileDescriptor("scripts/build-ios.xml.template", FileType.Classpath)
 				.readString();
 		} else {
-			template = new FileDescriptor("com/badlogic/gdx/jnigen/resources/scripts/build-target.xml.template", FileType.Classpath)
+			template = new FileDescriptor("scripts/build-target.xml.template", FileType.Classpath)
 				.readString();
 		}
 

@@ -8,7 +8,7 @@ public class Main {
 	*/
 
     static {
-        System.load("C:\\Users\\Administrator\\source\\repos\\Project6\\x64\\Release\\Project6.dll");
+        System.load("D:\\github\\jjcJen\\jni\\libs\\Debug\\1_demo.dll");
     }
 
     public static void main(String[] args) {

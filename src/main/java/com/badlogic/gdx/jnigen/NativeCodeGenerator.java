@@ -391,10 +391,7 @@ public class NativeCodeGenerator {
 			System.out.println();
 			System.out.println("Command: " + command);
 			InputStream errorStream = process.getErrorStream();
-			int c = 0;
-			while ((c = errorStream.read()) != -1) {
-				System.out.print((char)c);
-			}
+
 		}
 		
 		//Recursively delete temporary directory.
@@ -411,13 +408,8 @@ public class NativeCodeGenerator {
 		Process process = Runtime.getRuntime().exec(command);
 		process.waitFor();
 		if (process.exitValue() != 0) {
-			System.out.println();
-			System.out.println("Command: " + command);
 			InputStream errorStream = process.getErrorStream();
-			int c = 0;
-			while ((c = errorStream.read()) != -1) {
-				System.out.print((char)c);
-			}
+
 		}
 
 		//Recursively delete temporary directory.

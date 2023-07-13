@@ -1,0 +1,2 @@
+APP_ABI := %androidABIs%
+APP_PLATFORM := android-9
