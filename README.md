@@ -1,6 +1,23 @@
 # README.md
 
+## 使用方法
+
+1.修改需要处理的源代码目录
+
+String path = "src/main/java/org";
+
+2.GenTools执行方法
+
+在jni下生成c源代码文件以及CMakeLists.txt文件
+
+3.执行run脚本
+
+4.
+
+
+
 1.在java的native文件的注释上写c实现
+
 ```java
 
 public class Main {

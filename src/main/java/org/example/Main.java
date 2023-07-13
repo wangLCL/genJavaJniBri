@@ -1,5 +1,7 @@
 package org.example;
 
+import java.io.File;
+
 public class Main {
 
     // @off
@@ -8,7 +10,9 @@ public class Main {
 	*/
 
     static {
-        System.load("D:\\github\\jjcJen\\jni\\libs\\Debug\\1_demo.dll");
+        File file = new File("jni\\libs\\Debug\\1_demo.dll");
+        System.out.println(file.getAbsolutePath());
+        System.load(file.getAbsolutePath());
     }
 
     public static void main(String[] args) {
