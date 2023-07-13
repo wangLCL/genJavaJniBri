@@ -13,6 +13,7 @@ public class Main {
         File file = new File("jni\\libs\\Debug\\1_demo.dll");
         System.out.println(file.getAbsolutePath());
         System.load(file.getAbsolutePath());
+//        System.setProperty("main_lib_dll","");
     }
 
     public static void main(String[] args) {

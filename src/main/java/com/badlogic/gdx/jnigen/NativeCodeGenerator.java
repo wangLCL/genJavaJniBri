@@ -495,8 +495,11 @@ public class NativeCodeGenerator {
 			FileWriter writer = new FileWriter(file);
 			writer.write(comn);
 			writer.flush();
+			writer.close();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
+		}finally {
+
 		}
 	}
 

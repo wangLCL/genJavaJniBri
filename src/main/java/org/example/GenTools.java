@@ -5,6 +5,10 @@ import com.badlogic.gdx.jnigen.FileDescriptor;
 
 import java.io.*;
 import java.net.URL;
+import java.util.jar.Attributes;
+import java.util.jar.JarEntry;
+import java.util.jar.JarOutputStream;
+import java.util.jar.Manifest;
 
 public class GenTools {
 
@@ -15,15 +19,54 @@ public class GenTools {
         printName(file);
         genCpp(path);
         cmakeBuild();
-        runBat();  //执行老说没权限，  好吧
-//        genJar();
-//        genBuild();
-//        antZip();
-//        new SharedLibraryLoader("jni/libs/test-natives.jar").load("test");
+        runBat();
+        genJar();
+    }
+
+    public static void genJar(){
+        try {
+            buildJarWithDll();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static final String DLL_PATH = "jni/libs/Debug/1_demo.dll";  // 替换为你的 DLL 文件路径
+    private static final String JAR_PATH = "libs/test.jar";  // 替换为你要生成的 JAR 文件路径
+
+    private static void buildJarWithDll() throws IOException {
+        File dllFile = new File(DLL_PATH);
+        File jarFile = new File(JAR_PATH);
+
+        // 创建 JAR 文件
+        Manifest manifest = new Manifest();
+        manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
+        manifest.getMainAttributes().put(Attributes.Name.MAIN_CLASS, GenTools.class.getName());
+
+        try (JarOutputStream jarOutputStream = new JarOutputStream(new FileOutputStream(jarFile), manifest)) {
+            // 将 DLL 文件添加到 JAR 文件中
+            addToJar(jarOutputStream, dllFile, dllFile.getName());
+        }
+
+        System.out.println("JAR 文件已生成：" + jarFile.getAbsolutePath());
+    }
+
+    private static void addToJar(JarOutputStream jarOutputStream, File file, String entryName) throws IOException {
+        try (InputStream inputStream = new FileInputStream(file)) {
+            JarEntry jarEntry = new JarEntry(entryName);
+            jarOutputStream.putNextEntry(jarEntry);
+
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                jarOutputStream.write(buffer, 0, bytesRead);
+            }
+
+            jarOutputStream.closeEntry();
+        }
     }
 
     private static void runBat() {
-
         File file = new File("jni/run.bat");
         System.out.println();
         try {
@@ -72,6 +115,7 @@ public class GenTools {
 
 
     public static void deleteDir(File file){
+        if (file.listFiles()==null)return;
         for (File listFile : file.listFiles()) {
             if (listFile.isDirectory()){
                 deleteDir(listFile);
@@ -124,6 +168,8 @@ public class GenTools {
                 builder.append("cmake ..");
                 builder.append("\r\n");
                 builder.append("cmake --build .");
+                builder.append("\r\n");
+                builder.append("exit");
                 writer.write(builder.toString());
                 writer.flush();
                 System.out.println(builder.toString());

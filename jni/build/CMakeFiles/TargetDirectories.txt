@@ -1,0 +1,3 @@
+D:/github/jjcJen/jni/build/CMakeFiles/1_demo.dir
+D:/github/jjcJen/jni/build/CMakeFiles/ALL_BUILD.dir
+D:/github/jjcJen/jni/build/CMakeFiles/ZERO_CHECK.dir
