@@ -179,7 +179,7 @@ public class GenTools {
                 builder.append("\r\n");
                 builder.append("cmake --build .");
                 builder.append("\r\n");
-                builder.append("exit");
+
                 writer.write(builder.toString());
                 writer.flush();
                 System.out.println(builder.toString());
