@@ -11,7 +11,9 @@ import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 
 public class GenTools {
-
+    public static boolean isWindows = System.getProperty("os.name").contains("Windows");
+    public static boolean isLinux = System.getProperty("os.name").contains("Linux");
+    public static boolean isMac = System.getProperty("os.name").contains("Mac");
     public static void main(String[] args)  {
         clearTargetDir();
         String path = "src/main/java/org";
@@ -138,6 +140,8 @@ public class GenTools {
                 builder.append("\r\n");
                 builder.append("set(LIBRARY_OUTPUT_PATH ../libs)");
                 builder.append("\r\n");
+                builder.append("file(GLOB cppfile ${PROJECT_SOURCE_DIR}/*cpp)");
+                builder.append("\r\n");
                 builder.append("include_directories(${PROJECT_SOURCE_DIR}/)");
                 builder.append("\r\n");
                 builder.append("add_library(1_demo SHARED org_example_Main.cpp)");
@@ -157,7 +161,13 @@ public class GenTools {
             try {
                 FileWriter writer = new FileWriter(file);
                 StringBuilder builder = new StringBuilder();
-                builder.append("@echo off");
+                if (isWindows) {
+                    builder.append("@echo off");
+                }else if (isLinux){
+                    builder.append("!/bin/bash");
+                }else {
+                    throw new RuntimeException("no support !");
+                }
                 builder.append("\r\n");
                 builder.append("cd jni");
                 builder.append("\r\n");
