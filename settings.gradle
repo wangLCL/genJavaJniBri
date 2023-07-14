@@ -1,2 +1,4 @@
 rootProject.name = 'jjcJen'
+include 'genjni'
+include 'demo'
 
