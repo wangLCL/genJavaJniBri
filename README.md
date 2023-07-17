@@ -12,10 +12,6 @@ String path = "src/main/java/org";
 
 3.执行run脚本
 
-4.
-
-
-
 1.在java的native文件的注释上写c实现
 
 ```java

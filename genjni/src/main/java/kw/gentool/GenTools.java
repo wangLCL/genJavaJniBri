@@ -30,6 +30,7 @@ public class GenTools {
         genTools.cmakeBuild();
         genTools.runBat();
         genTools.genJar();
+        genTools.clean();
     }
 
     public void genJar(){
@@ -225,6 +226,7 @@ public class GenTools {
             }else {
                 String path = file1.getPath();
                 if (path.endsWith(".java")) {
+                    System.out.println(path);
                     genHeader(path);
                 }
             }
@@ -252,6 +254,7 @@ public class GenTools {
             while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line);
             }
+            System.out.println(stringBuilder.toString());
             reader.close();
         } catch (Exception e) {
             e.printStackTrace();
