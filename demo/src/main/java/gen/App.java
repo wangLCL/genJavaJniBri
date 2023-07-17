@@ -7,11 +7,12 @@ public class App {
         String srcPath =  "demo/src/main/java/";
         String prePath =  "demo/src/main/java/";
         GenTools genTools = new GenTools(srcPath,prePath);
-        genTools.clearTargetDir();
-        genTools.genHeader();
+        genTools.clearTargetDir(); //clean target dir
+        genTools.genHeader(); //gen header
         genTools.genCpp();
         genTools.cmakeBuild();
         genTools.runBat();
         genTools.genJar();
+        genTools.clean();
     }
 }

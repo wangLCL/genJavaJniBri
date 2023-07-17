@@ -186,7 +186,6 @@ public class GenTools {
                 builder.append("\r\n");
                 builder.append("cmake --build .");
                 builder.append("\r\n");
-
                 writer.write(builder.toString());
                 writer.flush();
                 System.out.println(builder.toString());
@@ -194,14 +193,16 @@ public class GenTools {
                 throw new RuntimeException(e);
             }
         }
-
         {
-            GenTools.class.getResource(".");
             String cmakeHeader = GenTools.class.getClassLoader().getResource("cmakeheader").getPath();
-            File file = new File(cmakeHeader);
+            String arr[] = {
+                    "jni.h",
+                    "jni_md.h"
+            };
             try {
-                for (File listFile : file.listFiles()) {
-                    FileOutputStream output = new FileOutputStream(new File("jni/"+listFile.getName()));
+                for (String s : arr) {
+                    File listFile = new File("genjni/src/main/resources/cmakeheader/"+s);
+                    FileOutputStream output = new FileOutputStream(new File("jni/"+s));
                     FileInputStream inputStream = new FileInputStream(listFile);
                     write(output,inputStream);
                 }
@@ -230,7 +231,6 @@ public class GenTools {
         }
     }
 
-
     public void genCpp() {
         try {
             File fileDescriptor = new File(srcPath);
@@ -255,6 +255,23 @@ public class GenTools {
             reader.close();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void clean() {
+        File file = new File(srcPath);
+        cleanClass(file);
+    }
+
+    private void cleanClass(File file){
+        for (File listFile : file.listFiles()) {
+            if (listFile.isDirectory()) {
+                cleanClass(listFile);
+            } else {
+                if (listFile.getName().endsWith(".class")){
+                    listFile.delete();
+                }
+            }
         }
     }
 }
