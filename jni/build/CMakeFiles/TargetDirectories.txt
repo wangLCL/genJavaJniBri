@@ -1,0 +1,3 @@
+E:/github/genJavaJniBri/jni/build/CMakeFiles/1_demo.dir
+E:/github/genJavaJniBri/jni/build/CMakeFiles/ALL_BUILD.dir
+E:/github/genJavaJniBri/jni/build/CMakeFiles/ZERO_CHECK.dir

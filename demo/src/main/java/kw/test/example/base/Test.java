@@ -3,6 +3,7 @@ package kw.test.example.base;
 import kw.test.example.ArrayDemo;
 import kw.test.example.ClassDemo;
 import kw.test.example.MathUtils;
+import kw.test.example.SizeofTest;
 
 import java.io.File;
 
@@ -14,8 +15,10 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Test test = new Test();
-        test.classDemo();
+//        Test test = new Test();
+//        test.classDemo();
+        SizeofTest test = new SizeofTest();
+        System.out.println(test.catSizeof("xx"));
     }
 
     public void classDemo(){

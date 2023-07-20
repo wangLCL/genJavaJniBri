@@ -1,0 +1,10 @@
+^E:\GITHUB\GENJAVAJNIBRI\JNI\BUILD\CMAKEFILES\8CE69C4F6BA4ED007176A61BC7D660FA\GENERATE.STAMP.RULE
+setlocal
+C:\Users\28188\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe -SE:/github/genJavaJniBri/jni -BE:/github/genJavaJniBri/jni/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/github/genJavaJniBri/jni/build/1_demo.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project("1_demo")
+set(LIBRARY_OUTPUT_PATH ../libs)
+file(GLOB cppfile ${PROJECT_SOURCE_DIR}/*cpp)
+include_directories(${PROJECT_SOURCE_DIR}/)
+add_library(1_demo SHARED kw_test_example_SizeofTest.cpp)
+# add_executable(1_demo kw_test_example_SizeofTest.cpp)

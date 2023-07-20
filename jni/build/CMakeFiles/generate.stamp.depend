@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeRCInformation.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/MSVC-C.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/MSVC-CXX.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Windows-MSVC-C.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Windows-MSVC.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Windows.cmake
+C:/Users/28188/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/WindowsPaths.cmake
+E:/github/genJavaJniBri/jni/CMakeLists.txt
+E:/github/genJavaJniBri/jni/build/CMakeFiles/3.22.1-g37088a8-dirty/CMakeCCompiler.cmake
+E:/github/genJavaJniBri/jni/build/CMakeFiles/3.22.1-g37088a8-dirty/CMakeCXXCompiler.cmake
+E:/github/genJavaJniBri/jni/build/CMakeFiles/3.22.1-g37088a8-dirty/CMakeRCCompiler.cmake
+E:/github/genJavaJniBri/jni/build/CMakeFiles/3.22.1-g37088a8-dirty/CMakeSystem.cmake
