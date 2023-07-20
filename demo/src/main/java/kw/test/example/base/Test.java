@@ -18,7 +18,10 @@ public class Test {
 //        Test test = new Test();
 //        test.classDemo();
         SizeofTest test = new SizeofTest();
-        System.out.println(test.catSizeof("xx"));
+        System.out.println(test.catSizeof("xxxxxx"));
+        System.out.println(test.catSizeof(23));
+        System.out.println(test.catSizeof(23.0));
+
     }
 
     public void classDemo(){

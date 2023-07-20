@@ -27,24 +27,20 @@ JNIEXPORT jint JNICALL Java_kw_test_example_SizeofTest_catSizeof(JNIEnv* env, jo
 //         return -1;
 //     }
     if (env->IsInstanceOf(obj, env->FindClass("java/lang/String"))) {
-       
         const char* str11 = env->GetStringUTFChars((jstring)obj, NULL);
-        // int size = strlen(str11);
-    
-        // env->ReleaseStringUTFChars((jstring)obj, str11);
-    
-
-
-//    const char* str11 = env->GetStringUTFChars((jstring)obj, NULL);
-        // 使用字符串数据（注意要释放）
         int size = strlen(str11);
-        // std::cout << "str11: " << str11 << " Size: " << size << std::endl;
         env->ReleaseStringUTFChars((jstring)obj, str11);
-    
-    
-        return 1;
-    }else{
-        return 0;
-    }
+        return size;
+    }else if(env->IsInstanceOf(obj,env->FindClass("java/lang/Integer"))){
+//        jint intValue = env->CallIntMethod(obj,);
+         jmethodID m = env->GetMethodID(env->FindClass("java/lang/Integer"), "intValue", "()I");
+         jint x = env->CallIntMethod(obj, m);
+         return sizeof(x);
+    }else if(env->IsInstanceOf(obj,env->FindClass("java/lang/Double"))){
+ //        jint intValue = env->CallIntMethod(obj,);
+          jmethodID m = env->GetMethodID(env->FindClass("java/lang/Double"), "doubleValue", "()D");
+          jint x = env->CallIntMethod(obj, m);
+          return sizeof(x);
+     }
 }
 
