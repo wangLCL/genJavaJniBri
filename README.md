@@ -50,3 +50,29 @@ JNIEXPORT jint JNICALL Java_org_example_Main_add(JNIEnv* env, jclass clazz, jint
 
 
 ```
+
+
+## jni生成方法中不可以有继承
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
