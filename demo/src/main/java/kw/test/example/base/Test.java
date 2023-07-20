@@ -1,9 +1,6 @@
 package kw.test.example.base;
 
-import kw.test.example.ArrayDemo;
-import kw.test.example.ClassDemo;
-import kw.test.example.MathUtils;
-import kw.test.example.SizeofTest;
+import kw.test.example.*;
 
 import java.io.File;
 
@@ -17,11 +14,24 @@ public class Test {
     public static void main(String[] args) {
 //        Test test = new Test();
 //        test.classDemo();
+//        testObject();
+
+//        charTest();
+        StringTest test = new StringTest();
+        System.out.println(test.getStr());
+    }
+
+    private static void charTest() {
+        CharTest test = new CharTest();
+        System.out.println(test.charconvertNum('c'));
+        System.out.println(test.getJniChar());
+    }
+
+    private static void testObject() {
         SizeofTest test = new SizeofTest();
         System.out.println(test.catSizeof("xxxxxx"));
         System.out.println(test.catSizeof(23));
         System.out.println(test.catSizeof(23.0));
-
     }
 
     public void classDemo(){

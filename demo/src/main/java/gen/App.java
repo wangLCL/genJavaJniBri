@@ -9,7 +9,7 @@ public class App {
         GenTools genTools = new GenTools(srcPath,prePath);
 //        genTools.clearTargetDir(); //clean target dir
         genTools.genHeader(); //gen header
-//        genTools.genCpp();
+        genTools.genCpp();
 //        genTools.cmakeBuild();
 //        genTools.runBat();
 //        genTools.genJar();
