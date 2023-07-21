@@ -17,8 +17,18 @@ public class Test {
 //        testObject();
 
 //        charTest();
+//        stringTest();
+        int a = 10;
+        int b = 20;
+        int i = a | b;
+        System.out.println(i);
+    }
+
+    private static void stringTest() {
         StringTest test = new StringTest();
         System.out.println(test.getStr());
+
+        System.out.println(test.sendStr("123"));
     }
 
     private static void charTest() {
