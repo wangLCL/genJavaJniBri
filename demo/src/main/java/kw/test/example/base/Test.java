@@ -1,5 +1,6 @@
 package kw.test.example.base;
 
+import kw.learn._2_1_Demo;
 import kw.test.example.*;
 
 import java.io.File;
@@ -15,9 +16,30 @@ public class Test {
 //        Test test = new Test();
 //        test.classDemo();
 //        testObject();
-
 //        charTest();
 //        stringTest();
+//        yu();
+//        luioji();
+//        ccout();
+//        _2_1_Demo demo = new _2_1_Demo();
+//        System.out.println(demo.getLine("xx"));
+        Test t = new Test();
+        t.arrayDemo();
+    }
+
+    private static void ccout() {
+        CCout cCout = new CCout();
+        cCout.cprint();
+        cCout.cprint1("ssssss");
+    }
+
+    private static void luioji() {
+        LuojiSo so =  new LuojiSo();
+        System.out.println(so.ifTest(-10));
+        System.out.println(so.ifEslseTest(10));
+    }
+
+    private static void yu() {
         int a = 10;
         int b = 20;
         int i = a | b;

@@ -1,4 +1,5 @@
 #include <kw_test_example_ArrayDemo.h>
+#include<iostream>
 static inline jintArray wrapped_Java_kw_test_example_ArrayDemo_readArr
 (JNIEnv* env, jclass clazz, jintArray obj_a, int* a) {
 
@@ -6,8 +7,16 @@ static inline jintArray wrapped_Java_kw_test_example_ArrayDemo_readArr
 
     jboolean isCopy;
     jint *jint1 = env->GetIntArrayElements(obj_a,&isCopy);
+    jint xx[10];
+    for(int i = 0; i< 10;i++){
+        std::cout<< jint1[i]<<std::endl;
+        xx[i] = jint1[i]*2;
+    }
+
+
+
     jintArray out = env->NewIntArray(10);
-    env->SetIntArrayRegion(out, 0, 10, jint1);
+    env->SetIntArrayRegion(out, 0, 10, xx);
     return out;
     
 }

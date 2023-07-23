@@ -313,7 +313,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="E:\github\genJavaJniBri\jni\kw_test_example_LuojiSo.cpp" />
+    <ClCompile Include="E:\github\genJavaJniBri\jni\kw_test_example_ArrayDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\github\genJavaJniBri\jni\build\ZERO_CHECK.vcxproj">
